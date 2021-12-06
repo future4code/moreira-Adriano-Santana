@@ -54,8 +54,8 @@ function imprimeTresCoresFavoritas(){
 const cor1 = prompt("Digite sua cor preferida")
 const cor2 = prompt("Digite sua segunda cor preferida")
 const cor3 = prompt("Digite sua terceira cor preferida")
-const cores = [cor1,cor2,cor3]
-console.log(cores)
+
+console.log(Array(cor1,cor2,cor3))
 }
 
 // EXERCÍCIO 06
@@ -67,38 +67,48 @@ return string
 
 // EXERCÍCIO 07
 function calculaIngressosEspetaculo(custo, valorIngresso) {
-  // implemente sua lógica aqui
-
+  
+  return custo / valorIngresso
 }
 
 // EXERCÍCIO 08
 function checaStringsMesmoTamanho(string1, string2) {
-  // implemente sua lógica aqui
+ 
+return string1.length === string2.length 
+
 
 }
 
 // EXERCÍCIO 09
-function retornaPrimeiroElemento(array) {
-  // implemente sua lógica aqui
-
-}
+function retornaPrimeiroElemento(array){
+  return array [0]
+  
+} 
 
 // EXERCÍCIO 10
-function retornaUltimoElemento(array) {
-  // implemente sua lógica aqui
+function retornaUltimoElemento(array){
+
+  return array[array.length - 1]
 
 }
 
 // EXERCÍCIO 11
-function trocaPrimeiroEUltimo(array) {
-  // implemente sua lógica aqui
+function trocaPrimeiroEUltimo(array){
+  const primeiroItem = array[0]
+  const ultimoItem = array[array.length-1] 
+  
+ array[0]= ultimoItem
+ array[array.length-1] = primeiroItem
+console.log(array)
+  return array
 
 }
 
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
-  // implemente sua lógica aqui
-
+   string1.tolowerCase()
+  string2.tolowerCase()   
+ return string1 == string2
 }
 
 // EXERCÍCIO 13

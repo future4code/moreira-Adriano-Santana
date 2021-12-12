@@ -9,15 +9,29 @@
  * 
  * 
  * 
- */ 
-const texto = ("Boas vindas ao jogo de Blackjack!")
+ */
+/* const texto = ("Boas vindas ao jogo de Blackjack!")
 console.log(texto)
 const iniciarRodada = confirm("Quer iniciar uma nova rodada?")
-if(confirm("pergunta de sim ou não")){
-	
-   iniciarRodada()
-} else { 
+if (iniciarRodada) {
+   console.log("Vamos jogar !")
+
+
+} else {
    console.log("O jogo acabou !")
-	
+
 }
-//function IniciarRodada()
+
+const jogador = []
+const computador = []
+
+   for (let i = 0; i < 2; i++) {
+      jogador.push(comprarCarta())
+      computador.push(comprarCarta())
+
+   }
+console.log(jogador,computador) */
+
+
+
+

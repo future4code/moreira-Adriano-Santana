@@ -22,3 +22,7 @@ main h1{
     display:flex;
     padding:15px;    
 }
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .container-video video{ width:100px;
+    height: 50px;}
+}

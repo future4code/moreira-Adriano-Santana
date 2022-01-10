@@ -1,51 +1,27 @@
-/* 
-1 interpretação
-let a = 10
-let b = 10
 
-console.log(b) iguál a 10
+function filtraTarefas() {
+    const tarefas = [
+      { titulo: "Fazer Remember", status: "done", tempo: 30 },
+      { titulo: "Fazer Challange", status: "todo", tempo: 30 },
+      { titulo: "Assistir Aula", status: "done", tempo: 120 },
+      { titulo: "Fazer almoço nutritivo", status: "done", tempo: 60 },
+      { titulo: "Ler atentamente exercícios do dia", status: "doing", tempo: 20 },
+      { titulo: "Fazer exercício do dia", status: "doing", tempo: 180 },
+      { titulo: "Fazer desafio", status: "doing", tempo: 60 },
+      { titulo: "Ir para o Stand Up", status: "todo", tempo: 30 },
+      { titulo: "Enviar Feedback", status: "todo", tempo: 15 },
+      { titulo: "Enviar Exercício", status: "todo", tempo: 15 },
+      { titulo: "Jogar Videogame", status: "todo", tempo: 120 },
+      { titulo: "Assistir Novela", status: "todo", tempo: 90 }
+   ]
+     const novoArray = tarefas.filter((finalizado)=>{
+	 return finalizado.status === "done
+     "})
+     
+     const arraylista = tarefas.map((finalizado)=>{
+        return finalizado.titulo}) 
 
-b = 5
-console.log(a, b) a igual á 10 e b gual á 5   */
+        return arrayLista
+  } 
 
-/* 
-2ª interpretação 
-let a = 10
-let b = 20
-c = a
-b = c
-a = b
-
-console.log(a, b, c)  10 10 10 */
-
-
-/* 3ª interpretação
-
-let horasTrabalhadas = prompt("Quantas horas você trabalha por dia?")
-let salarioDiaria = prompt("Quanto você recebe por dia?")
-alert(`Voce recebe ${t/p} por hora`) */
-
-
-/* //Exercícios de escrita de código 1
-
-const nome = prompt("Qual o seu nome ?")
-const idade = prompt("Qual a sua idade ?")
-
-
-console.log (typeof nome,typeof idade)
-// resuldado string string
-
-console.log ("Olá",nome," sua idade é de",idade ,"anos") */
-// 2ª 
-const tempo = prompt("vai chover  hoje ?") 
-const guardaChuva = prompt("Voce tem guarda-chuva ?")
-const situação = prompt("e se chover vai se molhar ?")
-
-const respostaTempo = true
-const respostaGuardachuva = false
-const respostaSituação = true
-
-console.log ( "vai chover  hoje ?",respostaTempo)
-console.log ( "vai chover  hoje ?",respostaGuardachuva)
-console.log ( "vai chover  hoje ?",respostaSituação)
-
+  

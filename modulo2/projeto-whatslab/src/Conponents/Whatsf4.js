@@ -16,19 +16,7 @@ class Whatsf4 extends React.Component {
 		valorMensagem: "",
 		
 	}
-enviandoaMensagem = () => {
-		
-		const novaMensagem = {
-		 
-		  usuario: this.state.valorUsuario,
-		  
-		  mensagem: this.state.valorMensagem
-		};
-	
-		
-		/* const mensagemRecebidas = [...this.state.usuario,mensagem];
-	    this.setState({}); */
-	  };
+
 	render() {
 		return (
 			<ContainerWhatsf4>

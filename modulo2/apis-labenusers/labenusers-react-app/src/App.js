@@ -1,93 +1,36 @@
-import axios from "axios";
 import React from "react";
-
-const urlCadastroUsers =
-  "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
-
-const headers = {
-  headers: {
-    Authorization: "adriano-brito-moreira"
-  }
-};
+import TelaCadastro from "./components/TelaCadastro";
+import TelaListaUsuarios from "./components/TelaListaUsuarios";
 
 export default class App extends React.Component {
   state = {
-    usuarios: [],
-    nomeUsuarioInput: "",
-    emailUsuarioInput: ""
+    telaAtual: "cadastro",
   };
 
-  componentDidMount() {
-    this.getAllUsers();
+  escolheTela = () => {
+    switch (this.state.telaAtual){
+      case "cadastro":
+        return <TelaCadastro irParaLista={this.irParaLista}/>
+      case "lista":
+        return <TelaListaUsuarios irParaCadastro={this.irParaCadastro} />
+        default:
+          return <div>Erro! Página não Encontrada!</div>
+    }
   }
 
-  getAllUsers = () => {
-    axios
-      .get(urlCadastroUsers, headers)
-      .then((res) => {
-        this.setState({ usuarios:res.data});
-        
-      })
-      .catch((err) => {
-        alert("Usuario não encontrado!");
-      });
-  };
+  irParaCadastro = () => {
+    this.setState({ telaAtual: "cadastro" })
+  }
 
-  createUsers = () => {
-    const body = {
-      name: this.state.nomeUsuarioInput,
-      email: this.state.emailUsuarioInput,
-    };
-
-    axios
-      .post(urlCadastroUsers, body, headers)
-      .then((res) => {
-        alert(`Usuário ${this.state.nomeUserInput} foi criado com sucesso!`);
-        this.setState({ nomeUsuarioInput: "" });
-        this.setState({ emailUsuarioInput: "" });
-        this.getAllUsers();
-
-      })
-      .catch((err) => {
-        alert("Nome de usuario não encontrado");
-        this.setState({ nomeUsuarioInput: "" });
-      });
-  };
-
-  onTypeNameChange = (event) => {
-    this.setState({ nomeUsuarioInput: event.target.value });
-  };
-
-  onTypeNameEmail = (event) => {
-    this.setState({ emailUsuarioInput: event.target.value });
-  };
+  irParaLista = () => {
+    this.setState({ telaAtual: "lista"});
+  }
 
   render() {
-    const usersComponents = this.state.usuarios.map((cad) => {
-      return <li key={cad.id}>{cad.name}</li>;
-    
-    });
-
     return (
-      <div>
-        <h1>Labenusers</h1>
-        {usersComponents}
-        
-        <input
-          value={this.state.nomeUsuarioInput}
-          onChange={this.onTypeNameChange}
-          placeholder="Seu Nome"
-        />
-        <input
-          value={this.state.emailUsuarioInput}
-          onChange={this.onTypeNameEmail}
-          placeholder="Seu e-mail"
-        />
-        <button onClick={this.createUsers}>Adicionar Usuários</button>
-        <div>
-        <button>Tela Adicional</button>
-        </div>
+      <div> 
+          {this.escolheTela()}
       </div>
-    );
+      )
+    }
   }
-}

@@ -7,6 +7,9 @@ export default class CriarListaPlaylis extends React.Component {
   };
      pegarNomeDaPlaylist = (event) => {
     this.setState({nome: event.target.value})
+
+
+    
 }
 
   CriarPlaylist = () => {
@@ -32,11 +35,9 @@ export default class CriarListaPlaylis extends React.Component {
   render(){
       return(
       <div>
-          <input 
-                value={this.state.nomeDaPlaylist} 
-                onChange={this.pegarNomeDaPlaylist} 
-                placeholder="playlist"
-              />
+          
+          <input type="text" placeholder="Criar Playlist"></input>
+          <button onClick={this.pegarNomeDaPlaylist}>Criar Playlist </button>
               
       </div>)
   }

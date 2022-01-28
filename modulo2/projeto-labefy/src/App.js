@@ -1,12 +1,17 @@
 import React from "react";
+import CriarPlaylist from "./components/CriarListaPlaylist";
 
 export default class App extends React.Component {
-  render(){
-    return(
-    <div>
-      <h1>Playlist</h1>
-    
-    </div>);
-    
+  state = {
+    telaAtual:"home",
+  }
+  render() {
+    return (
+      <div ClassName="container">
+        <h1>Playlist</h1>
+        <CriarPlaylist/>
+      </div>
+    );
   }
 }
+

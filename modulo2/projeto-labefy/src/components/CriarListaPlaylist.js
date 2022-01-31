@@ -1,44 +1,62 @@
 import React from "react";
 import axios from "axios";
 
-export default class CriarListaPlaylis extends React.Component {
+
+
+
+
+  const playlistUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
+
+  const headers = {
+      headers:
+      {Authorization: "adriano-santana-moreira"}
+  }
+
+export default class CriarListaPlaylist extends React.Component {
   state = {
-    nomeDaPlaylist: "",
-  };
-     pegarNomeDaPlaylist = (event) => {
-    this.setState({nome: event.target.value})
 
-
+    nomePlaylist: ""
     
-}
 
-  CriarPlaylist = () => {
-    const urlCriaPlaylist = "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists"
+  }
+
+  onChangeNomePlaylist = (event) => {
+
+    this.setState({nomePlaylist: event.target.value})
+
+  }
+
+  criarPlaylist = () => {
 
     const body = {
-        "name": this.state.nomeDaPlaylist
-    }
-    const autorization = {
-      headers: {
-        Authorization: "adriano-brito-moreira"
-      }
+          name: this.state.nomePlaylist
     }
 
-    axios.post(urlCriaPlaylist, body, autorization)
-    .then((response) => {
-      this.setState({nomeDaPlaylist:""})
-      alert("Playlist Criada com sucesso!")
-
+    axios.post(playlistUrl, body, headers)
+    .then((res) => {
+        alert("Playlist criada com sucesso")
+        this.setState({nomePlaylist: ""})
+        
     })
-    .catch((err) => {alert(err)})
+    .catch(() => {
+        alert('página não encontrada')
+    })
+
   }
-  render(){
-      return(
+
+  render() {
+    return (
       <div>
-          
-          <input type="text" placeholder="Criar Playlist"></input>
-          <button onClick={this.pegarNomeDaPlaylist}>Criar Playlist </button>
-              
-      </div>)
+        <input
+          type="text"
+          placeholder="Playlist"
+          value={this.state.nomePlaylist}
+          onChange={this.onChangeNomePlaylist}
+        />
+        <button onClick={this.criarPlaylist}>Criar</button>
+
+        <button onClick={this.props.irTelaPlaylist}>Ir para playlists</button>
+      </div>
+    );
   }
 }

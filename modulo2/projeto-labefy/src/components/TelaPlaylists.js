@@ -1,43 +1,15 @@
-import React, { Component } from "react";
-import axios from "axios";
-export default class TelaPlaylists extends Component {
-  state = {
-    mostrarPlayslist: false,
-  };
-  
-  componentDidMount() {
-    this.getAllPlaylists();
-  }
+import React from "react";
 
-  
-  
-  getAllPlaylists = () => {
-    
-    const headers = {
-      headers: {
-        Authorization: "adriano-brito-moreira"
-      }
-    }
 
-    axios
 
-      .get("https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
-        headers)
-        
-        
 
-      .then((res) => {
-        this.setState({ usuarios: res.data});
-      })
-      .catch((err) => {
-        alert("Ops, algo de errado ocorreu, tente novamente!");
-        console.log(err.message);
-      });
-  };
 
+
+export default class TelaPlaylists extends React.Component {
   render() {
-    return( <div>
-            
-          </div>)
+    return <div>
+      <h4>playlist</h4>
+      <button onClick={this.props.irParaTelaInicial}>Voltar</button>
+    </div>;
   }
-} 
+}

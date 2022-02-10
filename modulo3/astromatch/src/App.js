@@ -1,12 +1,13 @@
 import React from 'react';
-import './App.css';
+import {Perfil} from './components/styled';
+
 
 export default function App() {
-  return (
+  return(   
     <div>
-      
-    </div>
-  );
+      <Perfil/>
+    </div>)
+  
 }
 
 

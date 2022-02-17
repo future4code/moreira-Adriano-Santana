@@ -1,28 +1,28 @@
 import React from "react";
-import { Home } from "./pages/Home";
-import { ListTravel } from "./pages/ListTravel";
-import { Login } from "./pages/Login";
-import { Signup } from "./pages/SignUp";
-
-import { BrowserRouter,Routes,Route} from "react-router-dom";
-
+import { BrowserRouter as Router ,Routes , Route} from "react-router-dom";
+import ListTravel from "../pages/ListTravel";
+import Home from "../pages/Home";
+import  Login  from "../pages/Login";
+import  Signup  from "../pages/SignUp";
 
 
 
-function Router() {
+
+
+const RouterDirection =()=> {
   return (
-    <BrowserRouter>
+    <Router>
     <Routes>
-      <Route exact path="/" element={<Home/>}/>
-      <Route exact path="/ListTravel" element={<ListTravel/>}/>
-      <Route exact path="/Login" element={<Login/>}/>
-      <Route exact path="/Signup" element={<Signup/>}/>
+      <Route  path="/" element={<Home/>}/>
+      <Route  path="/ListTravel" element={<ListTravel/>}/>
+      <Route  path="/Login" element={<Login/>}/>
+      <Route  path="/Signup" element={<Signup/>}/>
      </Routes>
-    </BrowserRouter>
+    </Router>
 
 
     
   );
 }
 
-export default Router;
+export default RouterDirection;

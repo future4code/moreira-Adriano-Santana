@@ -2,8 +2,9 @@ import React from "react";
 
 
 
-export const ListTravel = ()=> {
+ const ListTravel = ()=> {
   return (
-    <div>ListTravel</div>
+    <div></div>
   )
 }
+export default ListTravel;

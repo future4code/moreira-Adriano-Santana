@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Home from "./pages/Home";
+import RouterDirection from "./route/Router";
 
 const BackgroundImg = styled.div`
   width: 100%;
@@ -14,17 +14,19 @@ const PlanodeFundo = styled.img`
   width: 100%;
 `;
 
-function App() {
+const App =()=> {
+ 
   return (
     <div>
       <BackgroundImg>
         <div>
-          <Home />
+          <RouterDirection/>
           <PlanodeFundo src="https://i.postimg.cc/3xr8PZP7/Spaceship.png" />
         </div>
 
         <LogoImg src="https://i.postimg.cc/dQdG1qD3/Design-sem-nome-13.png" />
       </BackgroundImg>
+      
     </div>
   );
 }

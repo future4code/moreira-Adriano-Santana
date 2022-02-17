@@ -2,8 +2,9 @@ import React from "react";
 
 
 
-export const Signup = ()=> {
+ const Signup = ()=> {
   return (
     <div>SignUp</div>
   )
 }
+export default Signup;

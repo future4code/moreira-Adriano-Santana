@@ -1,40 +1,62 @@
 import React from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const BottonHome = styled.button`
+  font-family: 'Space Mono', monospace;
+  color:blue;
   position: absolute;
   padding:15px;
-  border:none;
   top: 500px;
   left: 500px;
-  background-color: violet;
+  background-color: #8f3eec;
   border-radius: 20px;
+  border:hidden;
   :hover {
     color: white;
-    background-color:pink;
+    border:solid;
+    border-color:blue;
   }
 `;
 const BottonAdm = styled.button`
+  font-family: 'Space Mono', monospace;
+  color:blue;
   position: absolute;
   padding:15px;
-  border:none;
+  border:#8f3eec;
   top: 500px;
   left: 650px;
-  background-color: violet;
+  background-color: #8f3eec;
   border-radius: 20px;
+  border:hidden;
   :hover {
     color: white;
+    border:solid;
+    border-color:blue;
   }
 `;
+const StyleLogin = styled.input`
+display:flex;
+flex-direction:column;
+border: solid 2px #63A1E6;
+`
 
 const Home = () => {
+  const navigate = useNavigate()
+  
+  const onChangeList = () =>{
+    navigate("/ListTravel")
+  };
+  const onChangeAdmin = () =>{
+    navigate("/Login")
+  };
   return (
     <div>
-      <div>
-        <BottonHome>List travel</BottonHome>
+    <div>
+        <BottonHome onClick={onChangeList}>List travel</BottonHome>
       </div>
       <div>
-        <BottonAdm >Admin area</BottonAdm >
+        <BottonAdm onClick={onChangeAdmin}>Admin area</BottonAdm >
       </div>
     </div>
   );

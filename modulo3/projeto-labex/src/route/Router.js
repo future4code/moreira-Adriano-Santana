@@ -4,6 +4,7 @@ import ListTravel from "../pages/ListTravel";
 import Home from "../pages/Home";
 import  Login  from "../pages/Login";
 import  Signup  from "../pages/SignUp";
+import AdminArea from "../pages/AdminArea";
 
 
 
@@ -17,6 +18,8 @@ const RouterDirection =()=> {
       <Route  path="/ListTravel" element={<ListTravel/>}/>
       <Route  path="/Login" element={<Login/>}/>
       <Route  path="/Signup" element={<Signup/>}/>
+      <Route  path="/Back" element={<Home/>}/>
+      <Route  path="/AdminArea" element={<AdminArea/>}/>
      </Routes>
     </Router>
 

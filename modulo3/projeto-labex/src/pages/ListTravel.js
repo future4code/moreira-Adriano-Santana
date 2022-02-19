@@ -2,8 +2,45 @@ import React from "react";
 import { useState,useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
+const ButtonBack = styled.button`
+  margin-top:5px;
+  width:150px;
+  font-family: 'Space Mono', monospace;
+  color:blue;
+  position: absolute;
+  padding:10px;
+  top: 110px;
+  left: 200px;
+  background-color: #8f3eec;
+  border-radius: 10px;
+  border:hidden;
+  :hover {
+    color: white;
+    border:solid;
+    border-color:blue;
+  }
+`;
 
+const ButtonSignup = styled.button`
+  margin-top:5px;
+  width:150px;
+  font-family: 'Space Mono', monospace;
+  color:blue;
+  position: absolute;
+  padding:10px;
+  top: 110px;
+  left: 400px;
+  background-color: #8f3eec;
+  border-radius: 10px;
+  border:hidden;
+  :hover {
+    color: white;
+    border:solid;
+    border-color:blue;
+  }
+`;
 
  const ListTravel = ()=> {
 
@@ -42,8 +79,8 @@ import { useNavigate } from "react-router-dom";
 
   return(
       <div>
-          <button onClick={buttonBack}>Back</button>
-          <button onClick={buttonSignup}>SignUp</button>
+          <ButtonBack onClick={buttonBack}>Back</ButtonBack>
+          <ButtonSignup onClick={buttonSignup}>SignUp</ButtonSignup>
           <p>Suas Viagens</p>
           <div>{listTravel}</div>
       </div>

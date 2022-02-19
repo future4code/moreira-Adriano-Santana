@@ -6,11 +6,11 @@ const BottonHome = styled.button`
   font-family: 'Space Mono', monospace;
   color:blue;
   position: absolute;
-  padding:15px;
+  padding:10px;
   top: 500px;
   left: 500px;
   background-color: #8f3eec;
-  border-radius: 20px;
+  border-radius: 10px;
   border:hidden;
   :hover {
     color: white;
@@ -22,12 +22,12 @@ const BottonAdm = styled.button`
   font-family: 'Space Mono', monospace;
   color:blue;
   position: absolute;
-  padding:15px;
+  padding:10px;
   border:#8f3eec;
   top: 500px;
   left: 650px;
   background-color: #8f3eec;
-  border-radius: 20px;
+  border-radius: 10px;
   border:hidden;
   :hover {
     color: white;

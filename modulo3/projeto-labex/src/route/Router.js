@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import  Login  from "../pages/Login";
 import  Signup  from "../pages/SignUp";
 import AdminArea from "../pages/AdminArea";
+import CreateTripPage from "../pages/CreateTripPage";
 
 
 
@@ -20,6 +21,7 @@ const RouterDirection =()=> {
       <Route  path="/Signup" element={<Signup/>}/>
       <Route  path="/Back" element={<Home/>}/>
       <Route  path="/AdminArea" element={<AdminArea/>}/>
+      <Route  path="/CreateTriPage" element={<CreateTripPage/>}/>
      </Routes>
     </Router>
 

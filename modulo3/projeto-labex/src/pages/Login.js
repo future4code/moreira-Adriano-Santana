@@ -4,15 +4,17 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-const ButtonHome = styled.button`
+const ButtonBack = styled.button`
+  margin-top:5px;
+  width:90px;
   font-family: 'Space Mono', monospace;
   color:blue;
   position: absolute;
-  padding:15px;
-  top: 500px;
-  left: 500px;
+  padding:10px;
+  top: 110px;
+  left: 180px;
   background-color: #8f3eec;
-  border-radius: 20px;
+  border-radius: 10px;
   border:hidden;
   :hover {
     color: white;
@@ -20,16 +22,28 @@ const ButtonHome = styled.button`
     border-color:blue;
   }
 `;
+const Input = styled.input`
+  
+  display:flex;
+  left:10px;
+  padding:10px;
+  background-color: #c8e2fa;
+  border-radius: 15px;
+  border:1px solid blue;
+  margin-top:5px;
+  
+`;
 const ButtonSend = styled.button`
+  margin-top:5px;
+  width:90px;
   font-family: 'Space Mono', monospace;
   color:blue;
   position: absolute;
-  padding:15px;
-  border:#8f3eec;
-  top: 500px;
-  left: 650px;
+  padding:10px;
+  top: 110px;
+  left: 55px;
   background-color: #8f3eec;
-  border-radius: 20px;
+  border-radius: 10px;
   border:hidden;
   :hover {
     color: white;
@@ -38,17 +52,18 @@ const ButtonSend = styled.button`
   }
 `;
 
+
 const StyleInput =styled.div`
-background-color: #8f3eec;
+
 border-radius:20px;
 width:300px;
 display:flex;
 justify-content:center;
 flex-direction:column;
 position: absolute;
-padding:5px;
-top:90%;
-left:625px;
+padding:15px;
+top:85%;
+left:620px;
 transform:translate3d(-50%,-50%,0)
 `;
 
@@ -95,18 +110,18 @@ transform:translate3d(-50%,-50%,0)
     
   return( 
     <StyleInput>
-    <input placeholder="Email"
+    <Input placeholder="Email"
      type="email"
     value={email}
     onChange={onChangeEmail} 
     />
-    <input placeholder="Password"
+    <Input placeholder="Password"
      type="Password"
     value={password}
     onChange={onChangePassword} 
     />
-    <button onClick={submitLogin}>Send</button>
-    <button onClick={onChangeHome}>Back</button>
+    <ButtonSend onClick={submitLogin}>Send</ButtonSend>
+    <ButtonBack onClick={onChangeHome}>Back</ButtonBack>
     </StyleInput>)
 };
 

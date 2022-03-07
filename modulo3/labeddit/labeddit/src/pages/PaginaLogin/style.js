@@ -11,14 +11,20 @@ height:140px;
 
 `
 
-export const StyleLogin = styled.div`
+export const DivPai = styled.div`
 width:400px;
 display:flex;
 flex-direction:column;
-margin:auto;
-margin-top: 250px;
+justify-content:center;
 
+`
 
+export const StyleLogin = styled.div`
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+background-color:red;
 `
 
 export const BotaoEnviar = styled.button`
@@ -36,27 +42,5 @@ export const BotaoEnviar = styled.button`
     }
 
 `
-export const DivPai = styled.div`
-    display:flex;
-    margin-top:40px;
-    width:600px;
-    height:550px;
-    background-image: linear-gradient(to right,#065F6F ,#0F8090,#24A39A);
-    color:white;
-    border-radius: 10px;
-    
-`
-export const Cadastro = styled.body`
- display:flex;
- justify-content:center;
- align-items:center;
 
- 
-`
-export const P = styled.p`
-    display:flex;
-    justify-content: center;
-    padding-top: 10px;
-    
-    `
-   
+  

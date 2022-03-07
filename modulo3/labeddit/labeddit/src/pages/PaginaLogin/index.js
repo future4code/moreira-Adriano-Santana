@@ -1,9 +1,10 @@
 import {BASE_URL} from "../../constants/urls";
-import { Logo, DivPai, BotaoEnviar, StyleLogin, Cadastro } from "./style";
+import { Logo, DivPai, BotaoEnviar} from "./style";
 import { Link } from "react-router-dom";
 import {useNavigate} from "react-router-dom";
 import axios from 'axios';
 import useForm from '../../hooks/useForm';
+
 
 
 export default function PaginaLogin() {
@@ -11,35 +12,34 @@ export default function PaginaLogin() {
 
   const {form, onChange, clearFields}= useForm({ email: "", password: "" })
 
-
-  const submitForm = ((e)=>{
-    e.preventDefault()
-    console.log("Formulário enviado:", form)
-    onSubmitLogin()
-
-  })
-
-  const onSubmitLogin = () => {
+   const onSubmitLogin = () => {
 
     const url = `${BASE_URL}/users/login`
     const body = form
 
     axios.post(url, body)
     .then((res) => {
-        localStorage.setItem("token", res.data.token);
+        localStorage.setItem("token", res.data.token)
         alert("Login autorizado")
-        clearFields()
-        navigate("/feed")
+        //clearFields()
+        navigate("/pg_feed")
+        console.log(res.data)
 
     })
     .catch((error) => {
-        alert("Algo está errado, tente novamente!")
-        console.log(error.res);
+        
+        console.log(error.response);
 
     })
   }
+  const submitForm = ((e)=>{
+    e.preventDefault()
+    console.log("Formulário enviado:", form)
+    onSubmitLogin()
+
+  })
   return (
-    <StyleLogin>
+    <div>
       <Logo src="https://i.postimg.cc/XvM3Wf3N/Labeddit-2.png" />
       <DivPai>
         <form
@@ -60,7 +60,7 @@ export default function PaginaLogin() {
          type="password"
          value={form.password}
          onChange={onChange}
-         pattern={"\w{8,}"}
+         pattern={"\\w{8,}"}
           title={"A senha deve conter no mínimo 8 caracteres"} 
          required
          /> 
@@ -69,9 +69,8 @@ export default function PaginaLogin() {
           Entrar
         </BotaoEnviar>
         </form>
-        <Cadastro>Ainda não tem uma conta?  <Link to = "/pagina_cadastro">Cadastre-se</Link> </Cadastro>
+        <p>Ainda não tem uma conta?  <Link to = "/pagina_cadastro">Cadastre-se</Link> </p>
 
         </DivPai>
-    </StyleLogin>
-  )
+    </div>)
 }

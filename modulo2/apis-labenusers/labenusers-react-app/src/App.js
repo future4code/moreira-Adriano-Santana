@@ -1,7 +1,16 @@
 import React from "react";
 import TelaCadastro from "./components/TelaCadastro";
 import TelaListaUsuarios from "./components/TelaListaUsuarios";
+import styled from "styled-components";
 
+const AppContainer = styled.div`
+width:60vw;
+background-image: linear-gradient(#2561A8,#A5E5E7,#5ABBDD);
+margin:auto;
+margin-top: 25px;
+position:relative;
+
+`
 export default class App extends React.Component {
   state = {
     telaAtual: "cadastro",
@@ -28,9 +37,9 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div> 
+      <AppContainer> 
           {this.escolheTela()}
-      </div>
+      </AppContainer>
       )
     }
   }

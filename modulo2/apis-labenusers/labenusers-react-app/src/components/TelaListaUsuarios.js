@@ -9,6 +9,7 @@ const CardUsuario = styled.div`
     width: 300px;
     display: flex;
     justify-content: space-between;
+    background-image: linear-gradient(#2561A8,#A5E5E7,#5ABBDD);
     `
 
 

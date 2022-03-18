@@ -1,14 +1,16 @@
-import { useState } from 'react'
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+
 
 
 const FooterInputs = styled.div`
 display:flex;
-height: 40px;
+
 
 `
+
 const InputUsuario = styled.input`
+
 
 :hover{
     border: 2px solid green;
@@ -16,6 +18,7 @@ const InputUsuario = styled.input`
 
 `
 const InputMensagem = styled.input`
+width: 200px;
 
 :hover{
     border: 2px solid green;
@@ -29,45 +32,38 @@ const BotaoEnviar = styled.button`
 }
 
 `
+ const DivInput = styled.div`
+ position:absolute;
+ width:660px;
+ background-color:black;
+ `
 
-const InputFooter = () => {
-
-    const [form, setForm] = useState({ mensagem: "", usuario: "" })
-
-
-    const enviarMensagem = (event) => {
-        event.preventDefault()
-    }
-    const onChange = (event) => {
-        setForm({ ...form, [event.target.name]: event.target.value })
-    }
-
-
-    console.log(form)
+const InputFooter = (props) => {
+    
     return (
         <FooterInputs>
 
-            <form onSubmit={enviarMensagem}>
-
+            <form onSubmit={props.enviarMensagem}>
+             <DivInput>
                 <InputUsuario
-                    name={"usuario"}
+                    name="usuario" 
                     style={{ width: '50%' }}
-                    placeholder={"Usuario"}
-                    onChange={onChange}
-                    value={form.usuario}
-                />
+                    placeholder="Usuario"
+                    onChange={props.onChange}
+                    value={props.form.usuario}
+                /> 
                 <InputMensagem
-                    name={"mensagem"}
+                    name="mensagem"
                     style={{ width: '100%' }}
-                    placeholder={"Mensagem"}
-                    onChange={onChange}
-                    value={form.mensagem}
+                    placeholder="Mensagem"
+                    onChange={props.onChange}
+                    value={props.form.mensagem}
 
-                />
+                />  
                 <BotaoEnviar>Enviar</BotaoEnviar>
-
+                </DivInput>
             </form>
-
+        
         </FooterInputs>
     )
 }

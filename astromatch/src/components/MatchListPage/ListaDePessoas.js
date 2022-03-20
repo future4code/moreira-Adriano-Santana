@@ -12,7 +12,9 @@ const ListItemContainer = styled.div`
     background-color: rgba(0, 0, 0, 0.1);
   }
 `;
-
+const BoldTextList = styled.p`
+ font-weight: bold;
+`
 const Avatar = styled.img`
   border-radius: 50%;
   margin-right: 8px;
@@ -24,7 +26,7 @@ function ListaDePessoas(props) {
   return (
     <ListItemContainer>
       <Avatar src={props.profile.photo} alt="Imagem da pessoa" />
-      <p>{props.profile.name}</p>
+      <BoldTextList>{props.profile.name}</BoldTextList>
        
     </ListItemContainer>
   );

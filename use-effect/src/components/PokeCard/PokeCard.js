@@ -1,6 +1,12 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import styled from "styled-components";
+
+const SizePokemon = styled.img`
+width: 300px;
+height:300px;
+`
 
 export default function PokeCard(props)  {
   const [pokemon, setPokemon] = useState({});
@@ -27,7 +33,7 @@ useEffect (()=>{
         <p>{pokemon.weight} Kg</p>
         {pokemon.types && <p>{pokemon.types[0].type.name}</p>}
         {pokemon.sprites && (
-          <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+          <SizePokemon src={pokemon.sprites.front_default} alt={pokemon.name} />
         )}
       </div>
     );

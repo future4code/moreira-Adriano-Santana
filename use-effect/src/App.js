@@ -1,8 +1,13 @@
 import React from "react";
-import styles from "./styles.css";
 import axios from "axios";
+import styled from "styled-components";
 import PokeCard from "./components/PokeCard/PokeCard";
 import { useEffect, useState } from "react";
+
+const ListaPokemon = styled.div`
+margin-left: 50%;
+margin-top: 60px;
+`
 
 export default function App() {
 
@@ -26,7 +31,7 @@ export default function App() {
 
     
     return (
-      <div className="App">
+      <ListaPokemon>
           <select onChange={onChangePokeName}>
           <option value={pokeName}>Nenhum</option>
           {pokeList.map(pokemon => {
@@ -39,6 +44,6 @@ export default function App() {
         </select>
         
         {pokeName && <PokeCard pokemon={pokeName}/>}
-      </div>
+      </ListaPokemon>
     );
   }

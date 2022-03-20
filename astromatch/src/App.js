@@ -1,7 +1,7 @@
-import "./App.css";
-import Main from "./components/Main/Main";
-import ResetBotao from "./components/ResetBotao/ResetBotao";
+import React from "react";
 import styled from "styled-components";
+import Main from "./components/Main/Main";
+
 
 const AppContainer = styled.div`
   display: flex;
@@ -12,7 +12,6 @@ function App() {
   return (
     <AppContainer>
       <Main />
-      <ResetBotao />
     </AppContainer>
   );
 }

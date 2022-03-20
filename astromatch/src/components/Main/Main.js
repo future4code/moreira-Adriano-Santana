@@ -1,24 +1,62 @@
-import React from 'react'
-import AppBar from '../AppBar/AppBar'
-import ChooseProfilePage from '../ChooseProfilePgage/ChooseProfilePage'
-import MatchListPage from '../MatchListPage/MatchListPage'
-import styled from 'styled-components'
+import React, { useState } from "react";
+import styled from "styled-components";
+import ResetButton from "../ResetButton/ResetButton";
+import AppBar from "../AppBar/AppBar";
+import PaginaPerfil from "../PaginaPerfil/PaginaPerfil";
+import MatchListPage from "../MatchListPage/MatchListPage";
 
-const DivMain = styled.div`
-margin:5px;
-border: 2px solid gray;
-border-radius: 10px;
-width: 400px;
-height:610px;
-background-image: linear-gradient(to right,#2561A8,#1DB8AA,#5ABBDD);
+
+const MainContainer = styled.div`
+  background-image: linear-gradient(180deg, #000235, #0039a7);
+  border: 1px solid lightblue;
+  border-radius: 10px;
+  width: 400px;
+  height: 800px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  
+`;
+const PosicaoReset = styled.div`
+display:flex;
+margin-top: 50px;
+justify-content:center;
+
 `
+function Main() {
+  const [selecionarPagina, setSelecionarPagina] = useState("escolherPerfil");
 
-export default function Main() {
+  const renderSelectedPage = () => {
+    switch (selecionarPagina) {
+      case "escolherPerfil":
+        return <PaginaPerfil/>;
+      case "match-list":
+        return <MatchListPage />;
+      default:
+        return <PaginaPerfil/>;
+    }
+  };
+
+  const goToChooseProfilePage = () => {
+    setSelecionarPagina("escolherPerfil");
+  };
+
+  const goToMatchListPage = () => {
+    setSelecionarPagina("match-list");
+  };
+
   return (
-    <DivMain>
-      <AppBar/>
-     <ChooseProfilePage/>
-    {/* <MatchListPage/>  */}
-    </DivMain>
-  )
+    <MainContainer>
+      <AppBar
+        goToChooseProfilePage={goToChooseProfilePage}
+        goToMatchListPage={goToMatchListPage}
+      />
+      {renderSelectedPage()}
+      <PosicaoReset>
+       <ResetButton/>
+      </PosicaoReset>
+    </MainContainer>
+  );
 }
+
+export default Main;

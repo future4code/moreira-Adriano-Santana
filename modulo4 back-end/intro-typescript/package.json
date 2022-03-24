@@ -1,0 +1,22 @@
+{
+  "name": "intro-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./build/index.js",
+    "exercicio": "tsc && node ./build/exercicio2.js",
+    "exerciciobisexto": "tsc && node ./build/exercicio3.js",
+    "compara":"tsc && node ./build/exercicio4.js",
+    "rgidade":"tsc && node ./build/exercicio5.js"
+    },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.14.1",
+    "typescript": "^4.6.2"
+  }
+}

@@ -1,7 +1,23 @@
 import React from 'react';
 import axios from 'axios';
+import styled from "styled-components";
 
+const TextTitle = styled.h2`
+display:flex;
+justify-content:center;
+`
+const Botao = styled.button`
+:hover{
+  background-color: black;
+  color:white;
+}
+`
+const Input = styled.input`
+position:relative;
+display:flex;
+justify-content:center; 
 
+`
 
 export default class TelaCadastro extends React.Component {
     state = {
@@ -44,14 +60,14 @@ export default class TelaCadastro extends React.Component {
     render() {
         return (
           <div> 
-              <button onClick={this.props.irParaLista}>Lista de Usuários</button>
-              <h2>Cadastro</h2>
-              <input 
+              <Botao onClick={this.props.irParaLista}>Lista de Usuários</Botao>
+              <TextTitle>Cadastro</TextTitle>
+              <Input
                 value={this.state.nome} 
                 onChange={this.handleNome} 
                 placeholder="Seu Nome"
               />
-              <input 
+              <Input
                 value={this.state.email} 
                 onChange={this.handleEmail} 
                 placeholder="Seu e-mail"

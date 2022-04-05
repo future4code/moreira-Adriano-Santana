@@ -19,7 +19,7 @@ c)
 ALTER TABLE Actor CHANGE gender gender VARCHAR(255);
 ```
 ####resposta: 
-O exemplo acima mostra como usar o comando ALTER TABLE para adicionar e depois mudar o gender para gender `VARCHAR(255)`.
+O exemplo acima mostra como usar o comando ALTER TABLE para adicionar e depois mudar o gender para gender VARCHAR(255).
 
 d)
 ```

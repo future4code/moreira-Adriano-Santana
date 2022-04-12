@@ -11,7 +11,7 @@ margin-left:20px;
 export const Busca= styled.input`
 width: 40%;
 height:30px;
-margin-top:15px;
+margin-top:5px;
 margin-left:200px;
 `
 export const BotaoBusca= styled.button`

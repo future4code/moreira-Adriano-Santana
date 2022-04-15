@@ -1,11 +1,14 @@
 GET http://localhost:3003/users 
+
 ###
 
-POST http://localhost:3003/users 
+POST http://localhost:3003/products 
 Content-Type: application/json 
 
 {
-    "name": "Jaime",
-    "email":"jaimepifanio@gmail",
-    "password": "labenu123"
+    "name": "Tv Smart AOC",
+    "price":1799,
+    "image": "https://www.extra.com.br/smart-tv-led-43-full-hd-aoc-roku-43s5195-78-com-wi-fi-controle-remoto-com-atalhos-roku-mobile-miracast-entradas-hdmi-e-usb-55002769/p/55002769?utm_medium=cpc&utm_source=GP_PLA&IdSku=55002769&idLojista=15&tipoLojista=1P&utm_campaign=elte_smart-shopping&gclid=Cj0KCQjwr-SSBhC9ARIsANhzu14GmiFhuqgFTb41wuVys1wDXyKt6a0AcUjNC6jthAM5Nd7TWQ77i8AaAvqPEALw_wcB"
 }
+###
+GET http://localhost:3003/products 

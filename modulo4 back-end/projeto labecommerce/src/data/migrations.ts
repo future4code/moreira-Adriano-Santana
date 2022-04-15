@@ -15,9 +15,17 @@ const createTables = () => connection
          id INT PRIMARY KEY AUTO_INCREMENT,
          name VARCHAR(255) NOT NULL,
          price INT NOT NULL,
-         image_url VARCHAR(255) NOT NULL
+         image TEXT NOT NULL
       );
-     
+      CREATE TABLE IF NOT EXISTS labecommerce_purchases (
+         id INT PRIMARY KEY AUTO_INCREMENT,
+         user_id INT NOT NULL,
+         FOREIGN KEY(user_id) REFERENCES labecommerce_users(id),
+         products_id INT NOT NULL,
+         FOREIGN KEY(products_id) REFERENCES labecommerce_products(id),
+         quantity INT NOT NULL,
+         total_price INT NOT NULL
+      );
    `)
    .then(() => { console.log("Tabelas criadas") })
    .catch(printError)

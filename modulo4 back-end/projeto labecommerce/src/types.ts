@@ -5,8 +5,8 @@ export type user = {
    password: string
 }
 export type products = {
-   id: string
+   id: number
    name: string
    price: number
-   image_url: string
+   image: string
 }

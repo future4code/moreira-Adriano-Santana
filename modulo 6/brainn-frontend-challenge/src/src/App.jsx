@@ -4,7 +4,7 @@ import Background from "./components/Background";
 
 import moment from 'moment'
 import 'moment/locale/pt-br'
-
+import loterias from "./assets/loterias.jp"
 
 
 import {
@@ -67,6 +67,7 @@ const App = () => {
   return (
     <Container>
       <Main>
+      <img src={loterias} />
       <Background
       className="img" 
       color={color}

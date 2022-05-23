@@ -5,6 +5,8 @@ import Background from "./components/Background";
 import moment from 'moment'
 import 'moment/locale/pt-br'
 
+
+
 import {
   Container,
   Main,
@@ -49,7 +51,7 @@ const App = () => {
   
   const concursoId = concursos.filter((res) => res.loteriaId == selectValue ).map((res) => res.concursoId)
 
-  const color = colors.filter((res) => res.id == selectValue).map((res) => res.color)
+  const color=colors.filter((res) => res.id == selectValue).map((res) => res.color)
   useEffect(() => {
     api
       .get(`/concursos/${concursoId[0]}`)
@@ -68,6 +70,7 @@ const App = () => {
       <Background
       className="img" 
       color={color}
+      
       />
         <InfoSorteios>
         <SelectSorteios value={selectValue} onChange={e => setSelectValue(e.target.value)}>

@@ -1,6 +1,6 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyled = createGlobalStyle `
+export const GlobalStyled = createGlobalStyle`
 
 body { 
     margin: 0;
@@ -44,7 +44,7 @@ export const SectionRight = styled.div`
     }
     ul{        
         
-        width: 65%;
+        width: 70%;
         height: 70vh;
         display: grid;
         padding: 5px;
@@ -66,7 +66,6 @@ export const SectionRight = styled.div`
         display: flex;
         background-color: #ffffff;
         list-style: none;
-        border: 0;
         border-radius: 50%;
         width: 60px;
         height: 60px;
@@ -81,10 +80,10 @@ export const Mensagem = styled.p`
 export const SelectSorteios = styled.select`
     color: black;
     padding: 10px;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 0;
     outline: none;
-    width: 95%;
+    width: 200px;
 `
 export const InfoSorteios = styled.div`
     position: absolute;
@@ -154,6 +153,7 @@ export const InfoSorteios = styled.div`
     }
 
     @media screen and (max-width: 960px){
+        position:fixed;
             width: 100%;
             height: 0;
             position: absolute;

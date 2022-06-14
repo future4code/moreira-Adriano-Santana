@@ -10,5 +10,5 @@ const productController = new ProductContoller(
     )
 )
 
-app.post("/", productController.create)
+app.post("/create", productController.create)
 app.get("/products", productController.findProduct)

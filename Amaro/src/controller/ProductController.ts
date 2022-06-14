@@ -27,7 +27,7 @@ export class ProductContoller{
             if (error instanceof Error) {
                 return res.status(400).send(error.message)
             }
-            res.status(500).send("Erro no cadastro")
+            res.status(500).send("Erro de cadastro")
         }
     }
 

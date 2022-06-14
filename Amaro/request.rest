@@ -1,11 +1,7 @@
-POST http://localhost:3003/
+POST http://localhost:3003/create
 Content-Type: application/json
 
-{
-      "id": 7,
-      "name": "Casaco",
-      "tags": ["frio", "inverno", "chocolate quente"]
-}
+
 
 ###
 

@@ -1,5 +1,4 @@
 import { IProductData } from "../model/IProductaData"
-import { SignupInputDTO } from "../types/signupInputDTO"
 import { SignupOutputDTO } from "../types/signupOutputDTO"
 import products from "./products.json"
 
@@ -21,7 +20,7 @@ export class ProductBusiness{
                 console.log(products.products[i]);
                 
             }
-            return "Produto cadastrado no banco de dados!"
+            return "Produto cadastrado com sucesso!"
 
         } else {
             if(!id || !name || !tags){
@@ -30,7 +29,7 @@ export class ProductBusiness{
 
             const registeredProduct = await this.productDatabase.findById(id)
             if(registeredProduct){
-            throw new Error("Produto com esse id já cadastrado!")
+            throw new Error(" id já cadastrado!")
             }            
         }
         await this.productDatabase.create(input)

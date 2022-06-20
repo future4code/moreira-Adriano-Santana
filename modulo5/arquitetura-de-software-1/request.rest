@@ -1,0 +1,29 @@
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+   "name": "Carlos Henrique", 
+   "email": "Carlao@gmail.com" ,
+   "password": "1234567",
+   "role":"NORNAL"
+}
+
+###
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+   "email": "britobtx@gmail.com" ,
+   "password": "123456"
+}
+###
+
+GET http://localhost:3003/user/profile
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU3NDEwNWE5LTY2NTAtNGM1ZS1hYzg2LTVkYjViMGJiZDgyYiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTE3NTgyMywiZXhwIjoxNjUxMjYyMjIzfQ.YCUQQShX2Hr7-oQZYQID3nostvZVzr-g8yehDDhscpg
+
+###
+
+GET http://localhost:3003/user/af6bec91-8bad-4f9a-88bf-267990a46a74
+Content-Type: application/json
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU3NDEwNWE5LTY2NTAtNGM1ZS1hYzg2LTVkYjViMGJiZDgyYiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1MTE3NTgyMywiZXhwIjoxNjUxMjYyMjIzfQ.YCUQQShX2Hr7-oQZYQID3nostvZVzr-g8yehDDhscpg
